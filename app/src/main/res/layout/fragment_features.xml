@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeaturesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:id="@+id/feature_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/locBtn"
+        android:layout_width="247dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="82dp"
+        android:text="Location Information"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/hotelBtn"
+        android:layout_width="247dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginEnd="80dp"
+        android:text="Hotel Rates"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resturantBtn"
+        android:layout_width="247dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="552dp"
+        android:layout_marginEnd="76dp"
+        android:text="Places to Eat"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
