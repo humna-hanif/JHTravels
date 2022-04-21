@@ -2,9 +2,17 @@ package edu.quinnipiac.ser210.jhtravels;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ShareActionProvider;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -23,6 +31,9 @@ public class FeaturesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private NavController navController;
+    private ShareActionProvider provider;
+
 
     public FeaturesFragment() {
         // Required empty public constructor
@@ -60,5 +71,37 @@ public class FeaturesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_features, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+    }
+
+    /**
+     * Called when the Fragment is visible to the user.  This is generally
+     * tied to {@link Activity#onStart() Activity.onStart} of the containing
+     * Activity's lifecycle.
+     */
+    @Override
+    public void onStart() {
+        super.onStart();
+        getView().findViewById(R.id.locBtn).setOnClickListener(this::onClick);
+        getView().findViewById(R.id.resturantBtn).setOnClickListener(this::onClick);
+        getView().findViewById(R.id.hotelBtn).setOnClickListener(this::onClick);
+        getView().findViewById(R.id.backBtn2).setOnClickListener(this::onClick);
+    }
+
+    public void onClick(View view) {
+        if (view.getId() == R.id.locBtn) {
+            navController.navigate(R.id.action_featuresFragment_to_locationInfoFragment);
+        } else if (view.getId() == R.id.resturantBtn) {
+            navController.navigate(R.id.action_featuresFragment_to_restaurantsFragment);
+        } else if (view.getId() == R.id.hotelBtn) {
+            navController.navigate(R.id.action_featuresFragment_to_hotelRatesFragment);
+        } else if (view.getId() == R.id.backBtn2) {
+            navController.navigate(R.id.action_featuresFragment_to_mainFragment);
+        }
     }
 }

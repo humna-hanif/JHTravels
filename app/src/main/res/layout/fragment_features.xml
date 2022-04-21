@@ -3,47 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/layout"
     android:layout_height="match_parent"
     tools:context=".FeaturesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <FrameLayout
-        android:id="@+id/feature_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/resturantBtn"
+        android:layout_width="238dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="452dp"
+        android:text="Places to Eat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/locBtn"
-        android:layout_width="247dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="82dp"
+        android:layout_width="238dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="506dp"
         android:text="Location Information"
-        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@+id/backBtn2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/hotelBtn"
-        android:layout_width="247dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="238dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="248dp"
         android:text="Hotel Rates"
-        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/resturantBtn"
-        android:layout_width="247dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="552dp"
-        android:layout_marginEnd="76dp"
-        android:text="Places to Eat"
-        android:onClick="onClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    </FrameLayout>
+        android:id="@+id/backBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="33dp"
+        android:text="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
