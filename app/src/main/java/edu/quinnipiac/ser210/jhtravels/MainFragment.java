@@ -25,7 +25,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     NavController navController = null;
     private Spinner s;
-    private ShareActionProvider provider;
 
 
 

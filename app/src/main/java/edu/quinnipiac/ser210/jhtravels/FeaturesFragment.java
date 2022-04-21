@@ -32,7 +32,6 @@ public class FeaturesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private NavController navController;
-    private ShareActionProvider provider;
 
 
     public FeaturesFragment() {

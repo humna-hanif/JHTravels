@@ -29,7 +29,6 @@ public class SplashScreenFragment extends Fragment implements View.OnClickListen
     private String mParam1;
     private String mParam2;
     private NavController navController;
-    private ShareActionProvider provider;
 
 
     public SplashScreenFragment() {

@@ -16,7 +16,6 @@ import android.view.ViewGroup;
  */
 public class RestaurantsFragment extends Fragment {
 
-    private ShareActionProvider provider;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
