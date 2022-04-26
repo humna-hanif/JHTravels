@@ -35,7 +35,7 @@
         android:id="@+id/hotelBtn"
         android:layout_width="238dp"
         android:layout_height="88dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="240dp"
         android:text="Hotel Rates"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
