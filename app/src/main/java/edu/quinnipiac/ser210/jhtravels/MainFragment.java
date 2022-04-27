@@ -1,5 +1,10 @@
 package edu.quinnipiac.ser210.jhtravels;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +19,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +34,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     NavController navController = null;
     private Spinner s;
-
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -71,19 +79,34 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
-        String[] arraySpinner = new String[]{
-                "Tokyo, Japan", "Los Angeles, California", "Miami, Florida", "Sydney, Australia", "London, England", "Paris, France", "Dubai, UAE", "Athens, Greece", "Cairo, Egypt", "Boston, Massachusetts", "NYC, New York", "Cancun, Mexico", "Honolulu, Hawaii", "Addu City, Maldives", "Toronto, Canada", "Montego Bay, Jamaica", "Istanbul, Turkey", "Lahore, Pakistan", "Nassau, Bahamas", "San Jose, Costa Rica"
-        };
-        s = (Spinner) getView().findViewById(R.id.locSpinner);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_spinner_item, arraySpinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setAdapter(adapter);
-        getView().findViewById(R.id.enterBtn).setOnClickListener(this::onClick);
-        getView().findViewById(R.id.backBtn1).setOnClickListener(this::onClick);
+        SQLiteOpenHelper dbHelper = new DbHelper(getContext());
 
-    }
+        try {
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION"}, null, null, null, null, null);
+            cursor.moveToFirst();
+            ArrayList<String> locList = new ArrayList<>();
+
+            while (!cursor.isAfterLast()) {
+                locList.add(cursor.getString(0));
+                cursor.moveToNext();
+            }
+
+            s = (Spinner) getView().findViewById(R.id.locSpinner);
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                    android.R.layout.simple_spinner_item, locList);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            s.setAdapter(adapter);
+            getView().findViewById(R.id.enterBtn).setOnClickListener(this::onClick);
+            getView().findViewById(R.id.backBtn1).setOnClickListener(this::onClick);
+
+        } catch(SQLiteException e) {
+            Toast toast = Toast.makeText(getContext(), "Database unavailable", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,8 +123,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     public void onClick(View view) {
         if (view.getId() == R.id.enterBtn) {
-            navController.navigate(R.id.action_mainFragment_to_featuresFragment);
-            //String text = s.getSelectedItem().toString();
+            Bundle bundle = new Bundle();
+            bundle.putString("spinnerValue", s.getSelectedItem().toString());
+            navController.navigate(R.id.action_mainFragment_to_featuresFragment, bundle);
+
         } else if (view.getId() == R.id.backBtn1) {
             navController.navigate(R.id.action_mainFragment_to_splashScreenFragment);
         }

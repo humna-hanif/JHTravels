@@ -94,7 +94,9 @@ public class FeaturesFragment extends Fragment {
 
     public void onClick(View view) {
         if (view.getId() == R.id.locBtn) {
-            navController.navigate(R.id.action_featuresFragment_to_locationInfoFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("spinnerValue", getArguments().getString("spinnerValue"));
+            navController.navigate(R.id.action_featuresFragment_to_locationInfoFragment, bundle);
         } else if (view.getId() == R.id.resturantBtn) {
             navController.navigate(R.id.action_featuresFragment_to_restaurantsFragment);
         } else if (view.getId() == R.id.hotelBtn) {
