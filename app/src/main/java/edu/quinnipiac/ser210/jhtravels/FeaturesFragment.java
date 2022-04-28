@@ -78,11 +78,7 @@ public class FeaturesFragment extends Fragment {
         navController = Navigation.findNavController(view);
     }
 
-    /**
-     * Called when the Fragment is visible to the user.  This is generally
-     * tied to {@link Activity#onStart() Activity.onStart} of the containing
-     * Activity's lifecycle.
-     */
+
     @Override
     public void onStart() {
         super.onStart();
@@ -98,9 +94,13 @@ public class FeaturesFragment extends Fragment {
             bundle.putString("spinnerValue", getArguments().getString("spinnerValue"));
             navController.navigate(R.id.action_featuresFragment_to_locationInfoFragment, bundle);
         } else if (view.getId() == R.id.resturantBtn) {
-            navController.navigate(R.id.action_featuresFragment_to_restaurantsFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("spinnerValue", getArguments().getString("spinnerValue"));
+            navController.navigate(R.id.action_featuresFragment_to_restaurantsFragment, bundle);
         } else if (view.getId() == R.id.hotelBtn) {
-            navController.navigate(R.id.action_featuresFragment_to_hotelRatesFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("spinnerValue", getArguments().getString("spinnerValue"));
+            navController.navigate(R.id.action_featuresFragment_to_hotelRatesFragment, bundle);
         } else if (view.getId() == R.id.backBtn2) {
             navController.navigate(R.id.action_featuresFragment_to_mainFragment);
         }

@@ -50,7 +50,6 @@ public class LocationInfoFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private String url1 = "https://countries-cities.p.rapidapi.com/location/country/GB";
 
     public LocationInfoFragment() {
         // Required empty public constructor

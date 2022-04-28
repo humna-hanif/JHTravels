@@ -7,35 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".FeaturesFragment">
 
-    <Button
+    <ImageButton
         android:id="@+id/resturantBtn"
-        android:layout_width="238dp"
-        android:layout_height="88dp"
+        android:layout_width="318dp"
+        android:layout_height="106dp"
         android:layout_marginTop="452dp"
+        android:src="@drawable/eat"
         android:text="Places to Eat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/locBtn"
-        android:layout_width="238dp"
-        android:layout_height="88dp"
+        android:layout_width="319dp"
+        android:layout_height="96dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="506dp"
+        android:cropToPadding="false"
+        android:src="@drawable/loc_info"
         android:text="Location Information"
         app:layout_constraintBottom_toTopOf="@+id/backBtn2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/hotelBtn"
-        android:layout_width="238dp"
-        android:layout_height="88dp"
+        android:layout_width="316dp"
+        android:layout_height="102dp"
         android:layout_marginTop="240dp"
+        android:src="@drawable/hotel"
         android:text="Hotel Rates"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -46,7 +49,7 @@
         android:id="@+id/backBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="36dp"
         android:layout_marginBottom="33dp"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"

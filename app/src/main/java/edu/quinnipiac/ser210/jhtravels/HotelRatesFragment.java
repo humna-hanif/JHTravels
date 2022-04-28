@@ -1,13 +1,22 @@
 package edu.quinnipiac.ser210.jhtravels;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,5 +71,23 @@ public class HotelRatesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_hotel_rates, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SQLiteOpenHelper dbHelper = new DbHelper(getContext());
+        try {
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION","COUNTRY_INFO", "COUNTRY_IMG", "COUNTRY_HOTEL"}, "LOCATION = ?", new String[]{getArguments().getString("spinnerValue")}, null, null, null);
+            cursor.moveToFirst();
+            TextView textView = (TextView) view.findViewById(R.id.hotelInfo);
+            textView.setText(cursor.getString(3));
+
+
+        } catch(SQLiteException e) {
+            Toast toast = Toast.makeText(getContext(), "Database unavailable", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 }

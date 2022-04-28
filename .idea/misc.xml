@@ -7,9 +7,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11141304347826086" />
         <entry key="app/src/main/res/layout/activity_splashScreen.xml" value="0.35518940633433044" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_features.xml" value="0.1078125" />
-        <entry key="app/src/main/res/layout/fragment_hotel_rates.xml" value="0.11626139817629179" />
-        <entry key="app/src/main/res/layout/fragment_location_info.xml" value="0.1078125" />
+        <entry key="app/src/main/res/layout/fragment_features.xml" value="0.23813705663873125" />
+        <entry key="app/src/main/res/layout/fragment_hotel_rates.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_location_info.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.11548913043478261" />
         <entry key="app/src/main/res/layout/fragment_restaurants.xml" value="0.11141304347826086" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.11141304347826086" />
