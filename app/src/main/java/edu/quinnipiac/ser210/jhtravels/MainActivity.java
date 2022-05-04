@@ -9,17 +9,18 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.core.view.MenuItemCompat;
+import androidx.navigation.NavController;
 
 public class MainActivity extends AppCompatActivity {
     private ShareActionProvider provider;
     private View mConstraintLayout;
     private String color = "white";
     boolean userSelect = false;
-
-
+    NavController navController = null;
 
     //creates share option for action bar
     @Override
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public void shareText(View view) {
         Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setType("text/plain");
-        String shareBodyText = "Your shearing message goes here";
+        String shareBodyText = "Your sharing message goes here";
         intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject/Title");
         intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBodyText);
         startActivity(Intent.createChooser(intent, "Choose sharing method"));
@@ -69,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(sharingIntent, "Shearing Option"));
                 return true;
 
+            case android.R.id.home:
+                this.finish();
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -88,5 +92,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mConstraintLayout = findViewById(R.id.layout);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -5,7 +5,11 @@
     <item
         android:id="@+id/back"
         android:title="Back"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_back"
+        android:layout_gravity="center"
+        android:gravity="left|start"
+        />
 
     <item
         android:id="@+id/settings"
@@ -20,9 +24,8 @@
 
     <item
         android:id="@+id/share"
-        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
-        android:icon="@android:drawable/ic_menu_share"
         android:title="Share"
-        app:showAsAction="always" />
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
+        app:showAsAction="ifRoom" />
 
 </menu>
