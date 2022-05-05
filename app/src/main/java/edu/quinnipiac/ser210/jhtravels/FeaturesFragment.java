@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//implementation buttons on features screen
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.os.Bundle;
@@ -56,6 +60,7 @@ public class FeaturesFragment extends Fragment {
         return fragment;
     }
 
+    //creates fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +69,7 @@ public class FeaturesFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,6 +85,7 @@ public class FeaturesFragment extends Fragment {
     }
 
 
+    //gets all three buttons on the features screen and sets an on click listener for the button
     @Override
     public void onStart() {
         super.onStart();
@@ -87,6 +94,7 @@ public class FeaturesFragment extends Fragment {
         getView().findViewById(R.id.hotelBtn).setOnClickListener(this::onClick);
     }
 
+    //on click method, when the user clicked on the specific button the nav controller goes to specific fragment while getting location from spinner
     public void onClick(View view) {
         if (view.getId() == R.id.locBtn) {
             Bundle bundle = new Bundle();

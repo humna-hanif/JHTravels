@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//overall screen with actionbar
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.content.Intent;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, "Choose sharing method"));
     }
 
+    //specific implementation for parts of action bar; share, settings, and back button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -87,10 +92,12 @@ public class MainActivity extends AppCompatActivity {
         userSelect = true;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //creates back buttons on action bar
         mConstraintLayout = findViewById(R.id.layout);
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     }

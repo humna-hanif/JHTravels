@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//displays specific information about location the user chose
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.database.Cursor;
@@ -83,6 +87,7 @@ public class LocationInfoFragment extends Fragment {
      * @param view               The View returned by {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
      * @param savedInstanceState If non-null, this fragment is being re-constructed
      */
+    //fills the text view and image view with correct information from the database unique to location
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -105,6 +110,7 @@ public class LocationInfoFragment extends Fragment {
         }
     }
 
+    //creates fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

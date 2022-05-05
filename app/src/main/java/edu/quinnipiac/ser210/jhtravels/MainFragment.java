@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//screen where user can choose location from spinner
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.content.Intent;
@@ -67,6 +71,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         return fragment;
     }
 
+    //creates fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +81,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    //creates spinner where user can choose location
     @Override
     public void onStart() {
         super.onStart();
@@ -119,6 +125,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         navController = Navigation.findNavController(view);
     }
 
+    //on click for the button to move to next fragment
     public void onClick(View view) {
         if (view.getId() == R.id.enterBtn) {
             Bundle bundle = new Bundle();

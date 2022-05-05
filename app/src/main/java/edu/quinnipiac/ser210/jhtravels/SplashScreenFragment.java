@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//splash screen for app where user is first taken
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.os.Bundle;
@@ -53,6 +57,7 @@ public class SplashScreenFragment extends Fragment implements View.OnClickListen
         return fragment;
     }
 
+    //creates fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +75,15 @@ public class SplashScreenFragment extends Fragment implements View.OnClickListen
     }
 
 
+    //allows user to move on to next fragment
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
         view.findViewById(R.id.continueBtn).setOnClickListener(this);
     }
-    
+
+    //on click which allows user to move to next fragment when clicking the button
     public void onClick(View view) {
         navController.navigate(R.id.action_splashScreenFragment_to_mainFragment2);
     }

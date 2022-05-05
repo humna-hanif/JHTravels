@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//information for database
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.content.ContentValues;
@@ -16,6 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+    //creates the table for database and fills database with information
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE LOCATION (LOCATION, COUNTRY_INFO, COUNTRY_IMG, COUNTRY_HOTEL, COUNTRY_RESTAURANT, HOTEL_IMG1,HOTEL_IMG2, HOTEL_IMG3, R_IMG1, R_IMG2, R_IMG3);");
@@ -1125,6 +1130,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "4-star restaurant", R.drawable.sanjose_h_1, R.drawable.sanjose_h_2, R.drawable.sanjose_h_3, R.drawable.cr_r_1, R.drawable.cr_r_2, R.drawable.cr_r_3);
     }
 
+    //populates table with information unique to each location
     public static void insertLocation(SQLiteDatabase db, String loc, String countryInfo, int countryImg, String countryHotel, String countryRestaurant, int hotelImg1, int hotelImg2, int hotelImg3, int rImg1, int rImg2, int rImg3) {
         ContentValues locValues = new ContentValues();
         locValues.put("LOCATION", loc);
@@ -1142,6 +1148,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+    //upgrades the database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         updateMyDatabase(db, oldVersion, newVersion);

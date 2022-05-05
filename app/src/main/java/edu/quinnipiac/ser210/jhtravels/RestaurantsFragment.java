@@ -1,3 +1,7 @@
+//Authors: Julia Woeste and Humna Hanif
+//SER210
+//May 4th 2022
+//displays restaurant name and rates in specific location
 package edu.quinnipiac.ser210.jhtravels;
 
 import android.database.Cursor;
@@ -57,6 +61,7 @@ public class RestaurantsFragment extends Fragment {
         return fragment;
     }
 
+    //creates fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +71,7 @@ public class RestaurantsFragment extends Fragment {
         }
     }
 
+    //fills the text view and image view with correct information from the database unique to location
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
