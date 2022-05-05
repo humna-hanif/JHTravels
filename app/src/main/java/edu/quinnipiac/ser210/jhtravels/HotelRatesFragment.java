@@ -79,11 +79,19 @@ public class HotelRatesFragment extends Fragment {
         SQLiteOpenHelper dbHelper = new DbHelper(getContext());
         try {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
-            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION","COUNTRY_INFO", "COUNTRY_IMG", "COUNTRY_HOTEL"}, "LOCATION = ?", new String[]{getArguments().getString("spinnerValue")}, null, null, null);
+            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION","COUNTRY_INFO", "COUNTRY_IMG", "COUNTRY_HOTEL", "COUNTRY_RESTAURANT", "HOTEL_IMG1","HOTEL_IMG2", "HOTEL_IMG3", "R_IMG1", "R_IMG2", "R_IMG3"}, "LOCATION = ?", new String[]{getArguments().getString("spinnerValue")}, null, null, null);
             cursor.moveToFirst();
             TextView textView = (TextView) view.findViewById(R.id.hotelInfo);
             textView.setText(cursor.getString(3));
-
+            ImageView img1 = (ImageView) view.findViewById(R.id.h1);
+            int photoId1 = cursor.getInt(5);
+            img1.setImageResource(photoId1);
+            ImageView img2 = (ImageView) view.findViewById(R.id.h2);
+            int photoId2 = cursor.getInt(6);
+            img2.setImageResource(photoId2);
+            ImageView img3 = (ImageView) view.findViewById(R.id.h3);
+            int photoId3 = cursor.getInt(7);
+            img3.setImageResource(photoId3);
 
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(getContext(), "Database unavailable", Toast.LENGTH_SHORT);

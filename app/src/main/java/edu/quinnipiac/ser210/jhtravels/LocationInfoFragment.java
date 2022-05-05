@@ -89,7 +89,7 @@ public class LocationInfoFragment extends Fragment {
         SQLiteOpenHelper dbHelper = new DbHelper(getContext());
         try {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
-            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION","COUNTRY_INFO", "COUNTRY_IMG"}, "LOCATION = ?", new String[]{getArguments().getString("spinnerValue")}, null, null, null);
+            Cursor cursor = db.query("LOCATION", new String[]{"LOCATION","COUNTRY_INFO", "COUNTRY_IMG", "COUNTRY_HOTEL", "COUNTRY_RESTAURANT", "HOTEL_IMG1","HOTEL_IMG2", "HOTEL_IMG3", "R_IMG1", "R_IMG2", "R_IMG3"}, "LOCATION = ?", new String[]{getArguments().getString("spinnerValue")}, null, null, null);
             cursor.moveToFirst();
             TextView textView1 = (TextView) view.findViewById(R.id.locationTitle);
             textView1.setText(cursor.getString(0));

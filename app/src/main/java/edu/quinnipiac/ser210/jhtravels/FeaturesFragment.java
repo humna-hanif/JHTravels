@@ -85,7 +85,6 @@ public class FeaturesFragment extends Fragment {
         getView().findViewById(R.id.locBtn).setOnClickListener(this::onClick);
         getView().findViewById(R.id.resturantBtn).setOnClickListener(this::onClick);
         getView().findViewById(R.id.hotelBtn).setOnClickListener(this::onClick);
-        getView().findViewById(R.id.backBtn2).setOnClickListener(this::onClick);
     }
 
     public void onClick(View view) {
@@ -101,8 +100,6 @@ public class FeaturesFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString("spinnerValue", getArguments().getString("spinnerValue"));
             navController.navigate(R.id.action_featuresFragment_to_hotelRatesFragment, bundle);
-        } else if (view.getId() == R.id.backBtn2) {
-            navController.navigate(R.id.action_featuresFragment_to_mainFragment);
         }
     }
 }

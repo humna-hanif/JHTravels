@@ -24,11 +24,9 @@
         android:layout_width="319dp"
         android:layout_height="96dp"
         android:layout_marginTop="56dp"
-        android:layout_marginBottom="506dp"
         android:cropToPadding="false"
         android:src="@drawable/loc_info"
         android:text="Location Information"
-        app:layout_constraintBottom_toTopOf="@+id/backBtn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,16 +42,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/backBtn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="33dp"
-        android:text="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

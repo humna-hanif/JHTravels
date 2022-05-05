@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.core.view.MenuItemCompat;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
     private ShareActionProvider provider;
@@ -70,10 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(sharingIntent, "Shearing Option"));
                 return true;
 
-            case android.R.id.home:
-                this.finish();
-                return true;
-
+            case R.id.back:
+                navController.popBackStack();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mConstraintLayout = findViewById(R.id.layout);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     }
 }

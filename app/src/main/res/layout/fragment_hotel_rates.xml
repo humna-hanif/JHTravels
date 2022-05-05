@@ -26,12 +26,45 @@
 
     <TextView
         android:id="@+id/hotelInfo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="186dp"
+        android:layout_height="638dp"
         android:layout_gravity="center"
-        android:layout_marginTop="61dp"
-        android:gravity="center"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="188dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelratesTitle" />
+
+    <ImageView
+        android:id="@+id/h1"
+        android:layout_width="147dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/adducity_h_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelratesTitle" />
+
+    <ImageView
+        android:id="@+id/h2"
+        android:layout_width="147dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/adducity_h_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelratesTitle" />
+
+    <ImageView
+        android:id="@+id/h3"
+        android:layout_width="147dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/adducity_h_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hotelratesTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

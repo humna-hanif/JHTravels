@@ -100,8 +100,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             s.setAdapter(adapter);
             getView().findViewById(R.id.enterBtn).setOnClickListener(this::onClick);
-            getView().findViewById(R.id.backBtn1).setOnClickListener(this::onClick);
-
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(getContext(), "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
@@ -126,9 +124,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Bundle bundle = new Bundle();
             bundle.putString("spinnerValue", s.getSelectedItem().toString());
             navController.navigate(R.id.action_mainFragment_to_featuresFragment, bundle);
-
-        } else if (view.getId() == R.id.backBtn1) {
-            navController.navigate(R.id.action_mainFragment_to_splashScreenFragment);
         }
     }
 }

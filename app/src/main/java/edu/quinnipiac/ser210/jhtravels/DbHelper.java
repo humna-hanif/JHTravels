@@ -18,7 +18,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE LOCATION (LOCATION, COUNTRY_INFO, COUNTRY_IMG, COUNTRY_HOTEL, COUNTRY_RESTAURANT);");
+        db.execSQL("CREATE TABLE LOCATION (LOCATION, COUNTRY_INFO, COUNTRY_IMG, COUNTRY_HOTEL, COUNTRY_RESTAURANT, HOTEL_IMG1,HOTEL_IMG2, HOTEL_IMG3, R_IMG1, R_IMG2, R_IMG3);");
         insertLocation(db, "Tokyo, Japan", "Currency: Japanese yen \n" +
                 "\n" +
                 "Population: 13,960,000 (2021) \n" +
@@ -73,7 +73,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ - $$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.tokyo_h_1, R.drawable.tokyo_h_2, R.drawable.tokyo_h_3, R.drawable.tokyo_r_1, R.drawable.tokyo_r_2, R.drawable.tokyo_r_3);
         insertLocation(db, "Los Angeles, California", "Currency: U.S dollar \n" +
                 "\n" +
                 "Population: 3,967,000 (2019) \n" +
@@ -128,7 +128,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.la_h_1, R.drawable.la_h_2, R.drawable.la_h_3, R.drawable.la_r_1, R.drawable.la_r_2, R.drawable.la_r_3);
         insertLocation(db, "Miami, Florida", "Currency: U.S dollar \n" +
                 "\n" +
                 "Population: 454,279 (2019)  \n" +
@@ -183,7 +183,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.miami_h_1, R.drawable.miami_h_2, R.drawable.miami_h_3, R.drawable.miami_r_1, R.drawable.miami_r_2, R.drawable.miami_r_3);
         insertLocation(db, "Sydney, Australia", "Currency: Australian dollar (AUD) \n" +
                 "\n" +
                 "Population: 5,361,466 (2021) \n" +
@@ -238,7 +238,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.sydney_h_1, R.drawable.sydney_h_2, R.drawable.sydney_h_3, R.drawable.sydney_r_1, R.drawable.sydney_r_2, R.drawable.sydney_r_3);
         insertLocation(db, "London, England", "Currency: pound sterling \n" +
                 "\n" +
                 "Population: 9,002,488 (2021) \n" +
@@ -293,7 +293,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.london_h_1, R.drawable.london_h_2, R.drawable.london_h_3, R.drawable.london_r_1, R.drawable.london_r_2, R.drawable.london_r_3);
         insertLocation(db, "Paris, France", "Currency: Euro \n" +
                 "\n" +
                 "Population: 11,078,546 (2021) \n" +
@@ -348,7 +348,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.paris_h_1, R.drawable.paris_h_2, R.drawable.paris_h_3, R.drawable.paris_r_1, R.drawable.paris_r_2, R.drawable.paris_r_3);
         insertLocation(db, "Dubai, UAE", "Currency: UAE Dirham \n" +
                 "\n" +
                 "Population: 3,430,000 (2021) \n" +
@@ -403,7 +403,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$  \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.dubai_h_1, R.drawable.dubai_h_2, R.drawable.dubai_h_3, R.drawable.dubai_r_1, R.drawable.dubai_r_2, R.drawable.dubai_r_3);
         insertLocation(db, "Athens, Greece", "Currency: Euro \n" +
                 "\n" +
                 "Population: 3,153,000 (2021) \n" +
@@ -458,7 +458,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.athens_h_1, R.drawable.athens_h_2, R.drawable.athens_h_3, R.drawable.athens_r_1, R.drawable.athens_r_2, R.drawable.athens_r_3);
         insertLocation(db, "Cairo, Egypt", "Currency: pound (EGP) \n" +
                 "\n" +
                 "Population: 21,323,000 (2021) \n" +
@@ -513,7 +513,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.cairo_h_1, R.drawable.cairo_h_2, R.drawable.cairo_h_3, R.drawable.cairo_r_1, R.drawable.cairo_r_2, R.drawable.cairo_r_3);
         insertLocation(db, "Boston, Massachusetts", "Currency: U.S dollar \n" +
                 "\n" +
                 "Population: 4,315,000 (2021) \n" +
@@ -568,7 +568,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.boston_h_1, R.drawable.boston_h_2, R.drawable.boston_h_3, R.drawable.boston_r_1, R.drawable.boston_r_2, R.drawable.boston_r_3);
         insertLocation(db, "NYC, New York", "Currency: U.S dollar \n" +
                 "\n" +
                 "Population: 8,804,190 (2020) \n" +
@@ -623,7 +623,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.nyc_h_1, R.drawable.nyc_h_2, R.drawable.nyc_h_3, R.drawable.ny_r_1, R.drawable.ny_r_2, R.drawable.ny_r_3);
         insertLocation(db, "Cancun, Mexico", "Currency: Peso \n" +
                 "\n" +
                 "Population: 888,797 (2020) \n" +
@@ -678,7 +678,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.cancun_h_1, R.drawable.cancun_h_2, R.drawable.cancun_h_3, R.drawable.cancun_r_1, R.drawable.cancun_r_2, R.drawable.cancun_r_3);
         insertLocation(db, "Honolulu, Hawaii", "Currency: U.S dollar \n" +
                 "\n" +
                 "Population: 348,985 (2019) \n" +
@@ -733,7 +733,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.honolulu_h_1, R.drawable.honolulu_h_2, R.drawable.honolulu_h_3, R.drawable.hawaii_r_1, R.drawable.hawaii_r_2, R.drawable.hawaii_r_3);
         insertLocation(db, "Addu City, Maldives", "Addu City, Maldives \n" +
                 "\n" +
                 "Currency: Rufiyaa \n" +
@@ -790,7 +790,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$  \n" +
                 "\n" +
-                "3-star restaurant");
+                "3-star restaurant", R.drawable.adducity_h_1, R.drawable.adducity_h_2, R.drawable.adducity_h_3, R.drawable.maldives_r_1, R.drawable.maldives_r_2, R.drawable.maldives_r_3 );
         insertLocation(db, "Toronto, Canada", "Currency: Canadian dollar \n" +
                 "\n" +
                 "Population: 6,255,000 (2021) \n" +
@@ -845,7 +845,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.toronto_h_1, R.drawable.toronto_h_2, R.drawable.toronto_h_3, R.drawable.toronto_r_1, R.drawable.toronto_r_2, R.drawable.toronto_r_3);
         insertLocation(db, "Montego Bay, Jamaica", "Currency: Jamaican dollar \n" +
                 "\n" +
                 "Population: 427,891 (2018) \n" +
@@ -900,7 +900,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.jamaica_h_1, R.drawable.jamaica_h_2, R.drawable.jamaica_h_3, R.drawable.jamaica_r_1, R.drawable.jamaica_r_2, R.drawable.jamaica_r_3);
         insertLocation(db, "Istanbul, Turkey", "Currency: Turkish lira \n" +
                 "\n" +
                 "Population: 15,600,000 (2020) \n" +
@@ -955,7 +955,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ - $$$ \n" +
                 "\n" +
-                "5-star restaurant");
+                "5-star restaurant", R.drawable.turkey_h_1, R.drawable.turkey_h_2, R.drawable.turkey_h_3, R.drawable.turkey_r_1, R.drawable.turkey_r_2, R.drawable.turkey_r_3);
         insertLocation(db, "Lahore, Pakistan", "Lahore, Pakistan \n" +
                 "\n" +
                 "Currency: Pakistani rupee \n" +
@@ -1012,7 +1012,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.lahore_h_1, R.drawable.lahore_h_2, R.drawable.lahore_h_3, R.drawable.lahore_r_1, R.drawable.lahore_r_2, R.drawable.lahore_r_3);
         insertLocation(db, "Nassau, Bahamas", "Currency: Bahamian dollar \n" +
                 "\n" +
                 "Population: 266,100 (2016) \n" +
@@ -1067,7 +1067,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$  \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.bahamas_h_1, R.drawable.bahamas_h_2, R.drawable.bahamas_h_3, R.drawable.bahamas_r_1, R.drawable.bahamas_r_2, R.drawable.bahamas_r_3);
         insertLocation(db, "San Jose, Costa Rica", "Currency: Colon \n" +
                 "\n" +
                 "Population: 339,581 (2017) \n" +
@@ -1122,16 +1122,22 @@ public class DbHelper extends SQLiteOpenHelper {
                 "\n" +
                 "$$ \n" +
                 "\n" +
-                "4-star restaurant");
+                "4-star restaurant", R.drawable.sanjose_h_1, R.drawable.sanjose_h_2, R.drawable.sanjose_h_3, R.drawable.cr_r_1, R.drawable.cr_r_2, R.drawable.cr_r_3);
     }
 
-    public static void insertLocation(SQLiteDatabase db, String loc, String countryInfo, int countryImg, String countryHotel, String countryRestaurant) {
+    public static void insertLocation(SQLiteDatabase db, String loc, String countryInfo, int countryImg, String countryHotel, String countryRestaurant, int hotelImg1, int hotelImg2, int hotelImg3, int rImg1, int rImg2, int rImg3) {
         ContentValues locValues = new ContentValues();
         locValues.put("LOCATION", loc);
         locValues.put("COUNTRY_INFO", countryInfo);
         locValues.put("COUNTRY_IMG", countryImg);
         locValues.put("COUNTRY_HOTEL", countryHotel);
         locValues.put("COUNTRY_RESTAURANT", countryRestaurant);
+        locValues.put("HOTEL_IMG1", hotelImg1);
+        locValues.put("HOTEL_IMG2", hotelImg2);
+        locValues.put("HOTEL_IMG3", hotelImg3);
+        locValues.put("R_IMG1", rImg1);
+        locValues.put("R_IMG2", rImg2);
+        locValues.put("R_IMG3", rImg3);
         db.insert("LOCATION", null, locValues);
     }
 
