@@ -51,8 +51,6 @@ public class MainActivityTest {
         onView(withId(R.id.settings)).perform(click());
         onView(withId(R.id.settings)).perform(click());
 
-
-
     }
 
 }
